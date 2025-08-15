@@ -1,0 +1,69 @@
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: red;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  
+
+  /* Support */
+/* index.css or a global stylesheet */
+
+/* Fade-in keyframes for container */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Toast (popup) fade in & out */
+.font-stylish {
+  font-family: 'Playfair Display', serif;
+}
+/* Modal Content Styles */
+.modal-content {
+  width: 100%;
+  max-width: 900px; /* Limit width for large screens */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Overlay (Dark Background for Modal) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
