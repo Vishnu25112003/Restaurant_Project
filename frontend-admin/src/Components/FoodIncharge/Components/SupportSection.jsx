@@ -29,7 +29,7 @@ const SupportSection = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/support",
+        "https://restaurant-project-j4ow.onrender.com/api/support",
         formData
       );
       setToast({ message: response.data.message, type: "success" });

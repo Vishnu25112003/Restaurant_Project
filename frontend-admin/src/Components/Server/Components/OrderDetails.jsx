@@ -88,7 +88,7 @@ const OrderDetails = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://online-restaurant-management-system.onrender.com/deliverystatus/${encodeURIComponent(
+        `https://restaurant-project-j4ow.onrender.com/deliverystatus/${encodeURIComponent(
           id
         )}`
       );
@@ -130,7 +130,7 @@ const OrderDetails = () => {
       };
 
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/orderdone/complete",
+        "https://restaurant-project-j4ow.onrender.com/orderdone/complete",
         completedOrderData
       );
       setOrders((prevOrders) => prevOrders.filter((o) => o._id !== order._id));

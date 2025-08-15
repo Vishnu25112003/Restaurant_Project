@@ -26,7 +26,7 @@ const SupportPage = () => {
     try {
       // In a real app, you would use your actual API endpoint
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/support",
+        "https://restaurant-project-j4ow.onrender.com/api/support",
         formData
       );
       setSuccess({

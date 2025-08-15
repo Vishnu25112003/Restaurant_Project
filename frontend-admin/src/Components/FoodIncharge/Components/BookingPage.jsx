@@ -17,7 +17,7 @@ const BookingPage = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "https://online-restaurant-management-system.onrender.com/api/booking"
+        "https://restaurant-project-j4ow.onrender.com/api/booking"
       );
       const data = await response.json();
       const grouped = data.reduce((acc, order) => {
@@ -57,7 +57,7 @@ const BookingPage = () => {
     try {
       setIsLoading(true);
       await fetch(
-        `https://online-restaurant-management-system.onrender.com/api/booking/${id}`,
+        `https://restaurant-project-j4ow.onrender.com/api/booking/${id}`,
         { method: "DELETE" }
       );
       fetchOrders();

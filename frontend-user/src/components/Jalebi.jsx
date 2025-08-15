@@ -28,9 +28,7 @@ export default function JalebiMenu() {
   // Fetch Jalebi data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/jalebi"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/jalebi")
       .then((response) => setJalebiVarieties(response.data))
       .catch((error) => console.error("Error fetching jalebi data:", error));
   }, []);
@@ -73,7 +71,7 @@ export default function JalebiMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -85,7 +83,7 @@ export default function JalebiMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedJalebi._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedJalebi._id}/decrease-quantity`
       );
       setJalebiVarieties((prev) =>
         prev.map((jalebi) =>

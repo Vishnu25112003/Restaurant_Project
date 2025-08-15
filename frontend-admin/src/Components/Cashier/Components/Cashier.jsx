@@ -27,8 +27,7 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL =
-  "https://online-restaurant-management-system.onrender.com/orderdone/all";
+const API_URL = "https://restaurant-project-j4ow.onrender.com/orderdone/all";
 
 // Load Razorpay script dynamically
 const loadRazorpayScript = () => {
@@ -158,7 +157,7 @@ const CompletedOrderCard = ({ order }) => {
   const handleRefundSuccess = async (orderId, paymentId) => {
     try {
       const response = await axios.post(
-        `https://online-restaurant-management-system.onrender.com/api/refund`,
+        `https://restaurant-project-j4ow.onrender.com/api/refund`,
         {
           orderId,
           paymentId,

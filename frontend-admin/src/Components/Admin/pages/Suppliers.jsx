@@ -23,8 +23,7 @@ import {
   Trash2,
 } from "lucide-react";
 
-const API_BASE =
-  "https://online-restaurant-management-system.onrender.com/api/suppliers";
+const API_BASE = "https://restaurant-project-j4ow.onrender.com/api/suppliers";
 
 const Suppliers = () => {
   const [suppliers, setSuppliers] = useState([]);

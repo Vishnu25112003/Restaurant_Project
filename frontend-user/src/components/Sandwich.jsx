@@ -28,9 +28,7 @@ export default function SandwichMenu() {
   // Fetch Sandwich data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/sandwich"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/sandwich")
       .then((response) => setSandwiches(response.data))
       .catch((error) => console.error("Error fetching sandwiches:", error));
   }, []);
@@ -61,7 +59,7 @@ export default function SandwichMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedSandwich.name,
           basePrice: selectedSandwich.price,
@@ -78,7 +76,7 @@ export default function SandwichMenu() {
       setCustomNotes("");
 
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedSandwich._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedSandwich._id}/decrease-quantity`
       );
       setSandwiches((prev) =>
         prev.map((sandwich) =>

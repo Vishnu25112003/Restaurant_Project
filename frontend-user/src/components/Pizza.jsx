@@ -28,9 +28,7 @@ export default function PizzaMenu() {
   // Fetch Pizza data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/pizza"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/pizza")
       .then((response) => setPizzas(response.data))
       .catch((error) => console.error("Error fetching pizzas:", error));
   }, []);
@@ -61,7 +59,7 @@ export default function PizzaMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedPizza.name,
           basePrice: selectedPizza.price,
@@ -78,7 +76,7 @@ export default function PizzaMenu() {
       setCustomNotes("");
 
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedPizza._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedPizza._id}/decrease-quantity`
       );
       setPizzas((prev) =>
         prev.map((pizza) =>

@@ -13,7 +13,7 @@ import {
   UserPlus,
 } from "lucide-react";
 
-const API_BASE = "https://online-restaurant-management-system.onrender.com/api";
+const API_BASE = "https://restaurant-project-j4ow.onrender.com/api";
 
 const Registration = () => {
   const [showPassword, setShowPassword] = useState(false);

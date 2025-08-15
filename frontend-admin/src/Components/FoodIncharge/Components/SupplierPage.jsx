@@ -21,7 +21,7 @@ const SupplierPage = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "https://online-restaurant-management-system.onrender.com/api/suppliers"
+        "https://restaurant-project-j4ow.onrender.com/api/suppliers"
       );
       const data = await response.json();
       setSuppliers(data);
@@ -67,7 +67,7 @@ const SupplierPage = () => {
       }));
 
       const response = await fetch(
-        "https://online-restaurant-management-system.onrender.com/api/suppliers/send-notification",
+        "https://restaurant-project-j4ow.onrender.com/api/suppliers/send-notification",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

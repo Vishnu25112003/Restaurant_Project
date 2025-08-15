@@ -28,9 +28,7 @@ export default function NaanMenu() {
   // Fetch Naan data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/naan"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/naan")
       .then((response) => setNaans(response.data))
       .catch((error) => console.error("Error fetching naans:", error));
   }, []);
@@ -61,7 +59,7 @@ export default function NaanMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedNaan.name,
           basePrice: selectedNaan.price,
@@ -78,7 +76,7 @@ export default function NaanMenu() {
       setCustomNotes("");
 
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedNaan._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedNaan._id}/decrease-quantity`
       );
       setNaans((prev) =>
         prev.map((naan) =>

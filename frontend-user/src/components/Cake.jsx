@@ -29,9 +29,7 @@ export default function CakeMenu() {
   // Fetch Cake data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/cake"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/cake")
       .then((response) => setCakes(response.data))
       .catch((error) => console.error("Error fetching cakes:", error));
   }, []);
@@ -71,7 +69,7 @@ export default function CakeMenu() {
 
     try {
       const response = await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -84,7 +82,7 @@ export default function CakeMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedCake._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedCake._id}/decrease-quantity`
       );
       setCakes((prev) =>
         prev.map((cake) =>

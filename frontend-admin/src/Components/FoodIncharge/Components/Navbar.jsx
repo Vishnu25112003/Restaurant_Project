@@ -23,7 +23,7 @@ const Navbar = ({ setIsAuthenticated }) => {
       // Try to call the logout endpoint
       try {
         const response = await fetch(
-          "https://online-restaurant-management-system.onrender.com/api/login/logout",
+          "https://restaurant-project-j4ow.onrender.com/api/login/logout",
           {
             method: "POST",
             credentials: "include", // include cookies

@@ -34,7 +34,7 @@ const CartPage = () => {
       const selectedTable = localStorage.getItem("tableNumber"); // 👈 get the selected table number
 
       const res = await axios.get(
-        "https://online-restaurant-management-system.onrender.com/api/orders/my-orders",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/my-orders",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ const CartPage = () => {
       const token = localStorage.getItem("token");
 
       await axios.delete(
-        `https://online-restaurant-management-system.onrender.com/api/orders/cancel-order/${orderId}`,
+        `https://restaurant-project-j4ow.onrender.com/api/orders/cancel-order/${orderId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

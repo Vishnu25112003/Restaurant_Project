@@ -17,8 +17,7 @@ import {
   Coffee,
 } from "lucide-react";
 
-const API_BASE =
-  "https://online-restaurant-management-system.onrender.com/api/foods";
+const API_BASE = "https://restaurant-project-j4ow.onrender.com/api/foods";
 
 const foodCategories = [
   { value: "noodles", label: "Noodles", icon: "🍜" },

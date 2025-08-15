@@ -29,9 +29,7 @@ export default function BrowniesMenu() {
   // Fetch Brownies data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/brownies"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/brownies")
       .then((response) => setBrowniesVarieties(response.data))
       .catch((error) => console.error("Error fetching brownies data:", error));
   }, []);
@@ -74,7 +72,7 @@ export default function BrowniesMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -87,7 +85,7 @@ export default function BrowniesMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedBrownie._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedBrownie._id}/decrease-quantity`
       );
       setBrowniesVarieties((prev) =>
         prev.map((brownie) =>

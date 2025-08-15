@@ -28,9 +28,7 @@ export default function DoughnutsMenu() {
   // Fetch Doughnuts data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/doughnuts"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/doughnuts")
       .then((response) => setDoughnutsVarieties(response.data))
       .catch((error) => console.error("Error fetching doughnuts data:", error));
   }, []);
@@ -73,7 +71,7 @@ export default function DoughnutsMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -85,7 +83,7 @@ export default function DoughnutsMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedDoughnut._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedDoughnut._id}/decrease-quantity`
       );
       setDoughnutsVarieties((prev) =>
         prev.map((d) =>

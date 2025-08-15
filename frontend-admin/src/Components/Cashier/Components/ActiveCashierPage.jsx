@@ -27,9 +27,9 @@ import {
 import { useNavigate } from "react-router-dom";
 
 const API_URL_ACTIVE_ORDERS =
-  "https://online-restaurant-management-system.onrender.com/api/orders/my-orders";
+  "https://restaurant-project-j4ow.onrender.com/api/orders/my-orders";
 const API_URL_MARK_PAID =
-  "https://online-restaurant-management-system.onrender.com/api/orders/mark-paid";
+  "https://restaurant-project-j4ow.onrender.com/api/orders/mark-paid";
 
 // Load Razorpay script dynamically
 const loadRazorpayScript = () => {

@@ -58,8 +58,8 @@ const Support = () => {
     try {
       // Simulate API calls - replace with your actual endpoints
       const [ticketsRes, chatRes] = await Promise.allSettled([
-        // axios.get("https://online-restaurant-management-system.onrender.com/api/support/tickets"),
-        // axios.get("https://online-restaurant-management-system.onrender.com/api/support/chat"),
+        // axios.get("https://restaurant-project-j4ow.onrender.com/api/support/tickets"),
+        // axios.get("https://restaurant-project-j4ow.onrender.com/api/support/chat"),
         Promise.resolve({ data: generateMockTickets() }),
         Promise.resolve({ data: generateMockChatMessages() }),
       ]);

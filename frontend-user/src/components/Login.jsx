@@ -26,7 +26,7 @@ const Login = () => {
 
     try {
       const response = await fetch(
-        "https://online-restaurant-management-system.onrender.com/api/auth",
+        "https://restaurant-project-j4ow.onrender.com/api/auth",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

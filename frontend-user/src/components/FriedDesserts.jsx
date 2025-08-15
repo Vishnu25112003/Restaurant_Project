@@ -29,7 +29,7 @@ export default function FriedDessertsMenu() {
   useEffect(() => {
     axios
       .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/frieddesserts"
+        "https://restaurant-project-j4ow.onrender.com/api/foods/frieddesserts"
       )
       .then((response) => setFriedDessertsVarieties(response.data))
       .catch((error) => console.error("Error fetching desserts data:", error));
@@ -73,7 +73,7 @@ export default function FriedDessertsMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -85,7 +85,7 @@ export default function FriedDessertsMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedDessert._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedDessert._id}/decrease-quantity`
       );
       setFriedDessertsVarieties((prev) =>
         prev.map((dessert) =>

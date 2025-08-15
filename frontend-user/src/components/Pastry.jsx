@@ -28,9 +28,7 @@ export default function PastriesMenu() {
   // Fetch Pastries data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/pastries"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/pastries")
       .then((response) => setPastriesVarieties(response.data))
       .catch((error) => console.error("Error fetching pastries data:", error));
   }, []);
@@ -73,7 +71,7 @@ export default function PastriesMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -85,7 +83,7 @@ export default function PastriesMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedPastry._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedPastry._id}/decrease-quantity`
       );
       setPastriesVarieties((prev) =>
         prev.map((pastry) =>

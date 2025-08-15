@@ -18,8 +18,7 @@ import {
   Eye,
 } from "lucide-react";
 
-const API_BASE =
-  "https://online-restaurant-management-system.onrender.com/api/orders";
+const API_BASE = "https://restaurant-project-j4ow.onrender.com/api/orders";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);

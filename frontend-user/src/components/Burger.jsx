@@ -28,9 +28,7 @@ export default function BurgerMenu() {
   // Fetch Burger data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/burger"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/burger")
       .then((response) => setBurgers(response.data))
       .catch((error) => console.error("Error fetching burgers:", error));
   }, []);
@@ -61,7 +59,7 @@ export default function BurgerMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedBurger.name,
           basePrice: selectedBurger.price,
@@ -78,7 +76,7 @@ export default function BurgerMenu() {
       setCustomNotes("");
 
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedBurger._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedBurger._id}/decrease-quantity`
       );
       setBurgers((prev) =>
         prev.map((burger) =>

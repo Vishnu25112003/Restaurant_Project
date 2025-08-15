@@ -34,7 +34,7 @@ export default function LoginPage({ setIsAuthenticated }) {
 
     try {
       const res = await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/login",
+        "https://restaurant-project-j4ow.onrender.com/api/login",
         {
           username,
           password,

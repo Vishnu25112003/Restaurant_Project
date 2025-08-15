@@ -28,9 +28,7 @@ export default function PieMenu() {
   // Fetch Pie data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/pie"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/pie")
       .then((response) => setPies(response.data))
       .catch((error) => console.error("Error fetching pie data:", error));
   }, []);
@@ -73,7 +71,7 @@ export default function PieMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -85,7 +83,7 @@ export default function PieMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedPie._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedPie._id}/decrease-quantity`
       );
       setPies((prev) =>
         prev.map((pie) =>

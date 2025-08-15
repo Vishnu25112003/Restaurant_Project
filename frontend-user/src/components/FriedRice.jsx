@@ -28,9 +28,7 @@ export default function FriedRiceMenu() {
   // Fetch Fried Rice data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/fried-rice"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/fried-rice")
       .then((response) => setFriedRiceVarieties(response.data))
       .catch((error) =>
         console.error("Error fetching fried rice data:", error)
@@ -66,7 +64,7 @@ export default function FriedRiceMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedRice.name,
           basePrice: selectedRice.price,
@@ -85,7 +83,7 @@ export default function FriedRiceMenu() {
 
       // Update quantity in backend and UI
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedRice._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedRice._id}/decrease-quantity`
       );
 
       setFriedRiceVarieties((prev) =>

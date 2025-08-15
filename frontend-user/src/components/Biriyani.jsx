@@ -28,9 +28,7 @@ export default function BriyaniMenu() {
   // Fetch Briyani data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/biryani"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/biryani")
       .then((response) => setBriyaniVarieties(response.data))
       .catch((error) => console.error("Error fetching briyani data:", error));
   }, []);
@@ -64,7 +62,7 @@ export default function BriyaniMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedBriyani.name,
           basePrice: selectedBriyani.price,
@@ -83,7 +81,7 @@ export default function BriyaniMenu() {
 
       // Update quantity in backend and UI
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedBriyani._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedBriyani._id}/decrease-quantity`
       );
 
       setBriyaniVarieties((prev) =>

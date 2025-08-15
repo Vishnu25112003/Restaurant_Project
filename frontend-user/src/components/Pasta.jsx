@@ -28,9 +28,7 @@ export default function PastaMenu() {
   // Fetch Pasta data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/pasta"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/pasta")
       .then((response) => setPastaVarieties(response.data))
       .catch((error) => console.error("Error fetching pasta data:", error));
   }, []);
@@ -64,7 +62,7 @@ export default function PastaMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedPasta.name,
           basePrice: selectedPasta.price,
@@ -83,7 +81,7 @@ export default function PastaMenu() {
 
       // Update quantity in backend and UI
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedPasta._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedPasta._id}/decrease-quantity`
       );
 
       setPastaVarieties((prev) =>

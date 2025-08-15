@@ -54,13 +54,11 @@ const Dashboard = () => {
       // Fetch data from multiple endpoints
       const [ordersRes, suppliersRes, menuRes] = await Promise.allSettled([
         axios.get(
-          "https://online-restaurant-management-system.onrender.com/api/orders/my-orders"
+          "https://restaurant-project-j4ow.onrender.com/api/orders/my-orders"
         ),
+        axios.get("https://restaurant-project-j4ow.onrender.com/api/suppliers"),
         axios.get(
-          "https://online-restaurant-management-system.onrender.com/api/suppliers"
-        ),
-        axios.get(
-          "https://online-restaurant-management-system.onrender.com/api/foods/noodles"
+          "https://restaurant-project-j4ow.onrender.com/api/foods/noodles"
         ), // You can modify this to get all categories
       ]);
 

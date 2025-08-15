@@ -33,9 +33,7 @@ export default function NoodlesMenu() {
     console.log("Selected Noodle at addToCart:", selectedNoodle);
 
     axios
-      .get(
-        `https://online-restaurant-management-system.onrender.com/api/foods/noodles`
-      )
+      .get(`https://restaurant-project-j4ow.onrender.com/api/foods/noodles`)
       .then((response) => setNoodlesVarieties(response.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
@@ -86,7 +84,7 @@ export default function NoodlesMenu() {
 
     try {
       const orderRes = await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -101,7 +99,7 @@ export default function NoodlesMenu() {
 
       // Decrease quantity in backend
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedNoodle._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedNoodle._id}/decrease-quantity`
       );
 
       setNoodlesVarieties((prev) =>

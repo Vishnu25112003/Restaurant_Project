@@ -29,12 +29,9 @@ export default function IceCreamMenu() {
     const tableNumber = localStorage.getItem("tableNumber");
 
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/icecream",
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/icecream", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((response) => setIceCreams(response.data))
       .catch((error) => console.error("Error fetching ice creams:", error));
   }, []);
@@ -80,7 +77,7 @@ export default function IceCreamMenu() {
 
     try {
       const response = await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -92,7 +89,7 @@ export default function IceCreamMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedIceCream._id}/decrease-quantity`,
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedIceCream._id}/decrease-quantity`,
         {}, // Empty body since we're using PATCH
         { headers: { Authorization: `Bearer ${token}` } }
       );

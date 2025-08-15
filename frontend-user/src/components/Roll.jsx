@@ -28,9 +28,7 @@ export default function RollMenu() {
   // Fetch Roll data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/roll"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/roll")
       .then((response) => setRolls(response.data))
       .catch((error) => console.error("Error fetching rolls:", error));
   }, []);
@@ -61,7 +59,7 @@ export default function RollMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedRoll.name,
           basePrice: selectedRoll.price,
@@ -78,7 +76,7 @@ export default function RollMenu() {
       setCustomNotes("");
 
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedRoll._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedRoll._id}/decrease-quantity`
       );
       setRolls((prev) =>
         prev.map((roll) =>

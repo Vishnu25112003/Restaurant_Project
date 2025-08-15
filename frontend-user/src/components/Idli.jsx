@@ -28,9 +28,7 @@ export default function IdliMenu() {
   // Fetch Idli data
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/idli"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/idli")
       .then((response) => setIdlis(response.data))
       .catch((error) => console.error("Error fetching idlis:", error));
   }, []);
@@ -61,7 +59,7 @@ export default function IdliMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedIdli.name,
           basePrice: selectedIdli.price,
@@ -78,7 +76,7 @@ export default function IdliMenu() {
       setCustomNotes("");
 
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedIdli._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedIdli._id}/decrease-quantity`
       );
       setIdlis((prev) =>
         prev.map((idli) =>

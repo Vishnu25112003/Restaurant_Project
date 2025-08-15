@@ -29,9 +29,7 @@ export default function CookiesMenu() {
   // Fetch Cookies data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/cookies"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/cookies")
       .then((response) => setCookiesVarieties(response.data))
       .catch((error) => console.error("Error fetching cookies data:", error));
   }, []);
@@ -74,7 +72,7 @@ export default function CookiesMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -87,7 +85,7 @@ export default function CookiesMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedCookie._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedCookie._id}/decrease-quantity`
       );
 
       setCookiesVarieties((prev) =>

@@ -28,9 +28,7 @@ export default function MomosMenu() {
   // Fetch Momos data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/momos"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/momos")
       .then((response) => setMomosVarieties(response.data))
       .catch((error) => console.error("Error fetching momos data:", error));
   }, []);
@@ -64,7 +62,7 @@ export default function MomosMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         {
           foodName: selectedMomos.name,
           basePrice: selectedMomos.price,
@@ -83,7 +81,7 @@ export default function MomosMenu() {
 
       // Update quantity in backend and UI
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedMomos._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedMomos._id}/decrease-quantity`
       );
 
       setMomosVarieties((prev) =>

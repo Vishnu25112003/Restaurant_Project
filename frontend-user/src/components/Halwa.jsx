@@ -28,9 +28,7 @@ export default function HalwaMenu() {
   // Fetch Halwa data from API
   useEffect(() => {
     axios
-      .get(
-        "https://online-restaurant-management-system.onrender.com/api/foods/halwa"
-      )
+      .get("https://restaurant-project-j4ow.onrender.com/api/foods/halwa")
       .then((response) => setHalwas(response.data))
       .catch((error) => console.error("Error fetching halwa data:", error));
   }, []);
@@ -73,7 +71,7 @@ export default function HalwaMenu() {
 
     try {
       await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/orders/place-order",
+        "https://restaurant-project-j4ow.onrender.com/api/orders/place-order",
         orderData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -85,7 +83,7 @@ export default function HalwaMenu() {
 
       // Update inventory
       await axios.patch(
-        `https://online-restaurant-management-system.onrender.com/api/foods/${selectedHalwa._id}/decrease-quantity`
+        `https://restaurant-project-j4ow.onrender.com/api/foods/${selectedHalwa._id}/decrease-quantity`
       );
       setHalwas((prev) =>
         prev.map((halwa) =>

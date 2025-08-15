@@ -45,7 +45,7 @@ const SupplierList = () => {
     const fetchSuppliers = async () => {
       try {
         const response = await axios.get(
-          "https://online-restaurant-management-system.onrender.com/api/vendors/suppliers"
+          "https://restaurant-project-j4ow.onrender.com/api/vendors/suppliers"
         );
         console.log("Fetched suppliers:", response.data);
         setSuppliers(response.data);
@@ -70,7 +70,7 @@ const SupplierList = () => {
 
       try {
         await axios.post(
-          "https://online-restaurant-management-system.onrender.com/api/login/logout",
+          "https://restaurant-project-j4ow.onrender.com/api/login/logout",
           {},
           {
             withCredentials: true,
@@ -123,7 +123,7 @@ const SupplierList = () => {
       });
 
       const loginResponse = await axios.post(
-        "https://online-restaurant-management-system.onrender.com/api/vendors/suppliers/login",
+        "https://restaurant-project-j4ow.onrender.com/api/vendors/suppliers/login",
         {
           supplierId: username,
           password: password,
@@ -143,7 +143,7 @@ const SupplierList = () => {
 
         try {
           const orderResponse = await axios.get(
-            `https://online-restaurant-management-system.onrender.com/api/ordernotifications/${username}`
+            `https://restaurant-project-j4ow.onrender.com/api/ordernotifications/${username}`
           );
           console.log("Order response:", orderResponse.data);
 
